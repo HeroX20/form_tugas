@@ -238,3 +238,5 @@ function checkAndShowButton(tenggat) {
 openLinkButton.addEventListener('click', function() {
     window.open(love, '_blank'); // Buka tautan dalam jendela/tab baru
 });
+
+var kesayangan = "https://drive.google.com/file/d/1-VmIENBS_8B2woDEpcB6y5BMA0iSuCDz/view?usp=drive_link"
