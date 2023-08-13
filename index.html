@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Tugas</title>
+    <style>
+        #daftarTugas li {
+            white-space: pre-line;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Menghubungkan ke file CSS eksternal -->
+</head>
+<body>
+    <button id="mode">change!</button>
+    <button id="openLinkButton" style="display: none;">Buka Link</button>
+    <header>
+        <h1>Form Tugas</h1>
+    </header>
+    <main>
+        <form id="formTugas">
+            <div class="form-group">
+                <label for="mataPelajaran">Mata Pelajaran:</label>
+                <select name="mapel" id="mataPelajaran">
+                    <option>PAI</option>
+                    <option>PRODUKTIF</option>
+                    <option>Bahasa Inggris</option>
+                    <option>Bahasa Indonesia</option>
+                    <option>Pendidikan Jasmani, Olahraga dan Kesehatan</option>
+                    <option>Matematika</option>
+                    <option>Pendidikan KewargaNegaraan</option>
+                    <option>Sejarah</option>
+                    <option>Produk kreatif dan kewirausahaan</option>
+                    <option>Konsentrasi Keahlian</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="infoTugas">Info/Tugas:</label>
+                <label for="info">Info:</label>
+                <input type="radio" id="info" name="infoTugas" value="info" required>
+                <label for="tugas">Tugas:</label>
+                <input type="radio" id="tugas" name="infoTugas" value="tugas" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tenggat">Tenggat:</label>
+                <input type="date" id="tenggat" required>
+            </div>
+
+            <div class="form-group">
+                <label for="keterangan">Keterangan:</label>
+                <textarea id="keterangan" rows="4" cols="50"></textarea>
+            </div>
+
+            <button type="submit">Simpan</button>
+        </form>
+
+        <section>
+            <h2>Daftar Tugas</h2>
+            <ul id="daftarTugas"></ul>
+        </section>
+    </main>
+    <script src="main.js"></script> <!-- Menghubungkan ke file JavaScript eksternal -->
+</body>
+</html>
