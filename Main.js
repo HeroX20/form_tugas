@@ -71,10 +71,11 @@ function tambahTugasKeDaftar(mataPelajaran, infoTugas, tenggat, keterangan) {
     let daftarTugas = document.getElementById('daftarTugas');
     let li = document.createElement('li');
 
-    li.textContent = `#${mataPelajaran}
-                    #${infoTugas}
-                    Tenggat: ${tenggat}
-                    Keterangan: ${keterangan}`;
+    li.innerHTML = `<span class="mata-pelajaran">#${mataPelajaran}</span>
+                <span class="info-tugas">#${infoTugas}</span>
+                <span class="tenggat">Tenggat: ${tenggat}</span>
+                <span class="keterangan">Keterangan: ${keterangan}</span>`;
+
     
     tambahTombolSalin(li);
 
