@@ -71,11 +71,10 @@ function tambahTugasKeDaftar(mataPelajaran, infoTugas, tenggat, keterangan) {
     let daftarTugas = document.getElementById('daftarTugas');
     let li = document.createElement('li');
 
-    li.innerHTML = `<span class="mata-pelajaran">#${mataPelajaran}</span>
-                <span class="info-tugas">#${infoTugas}</span>
-                <span class="tenggat">Tenggat: ${tenggat}</span>
-                <span class="keterangan">Keterangan: ${keterangan}</span>`;
-
+    li.textContent = `#${mataPelajaran}
+                    #${infoTugas}
+                    Tenggat: ${tenggat}
+                    Keterangan: ${keterangan}`;
     
     tambahTombolSalin(li);
 
@@ -225,6 +224,31 @@ function tambahTugasKeDaftar(mataPelajaran, infoTugas, tenggat, keterangan) {
     daftarTugas.appendChild(li);
 }
 
+daftarTugas.addEventListener('click', function(event) {
+    if (event.target.classList.contains('salin-btn')) {
+        const liElement = event.target.closest('li');
+        const mataPelajaran = liElement.querySelector('.mata-pelajaran').textContent;
+        const infoTugas = liElement.querySelector('.info-tugas').textContent;
+        const tenggat = liElement.querySelector('.tenggat').textContent.replace('Tenggat: ', '');
+        const keterangan = liElement.querySelector('.keterangan').textContent.replace('Keterangan: ', '');
+        const formattedText = formatTugasText(mataPelajaran, infoTugas, tenggat, keterangan);
+        salinTeks(formattedText);
+    }
+});
+
+function formatTugasText(mataPelajaran, infoTugas, tenggat, keterangan) {
+    return `#${mataPelajaran}\n#${infoTugas}\nTenggat: ${tenggat}\nKeterangan: ${keterangan}`;
+}
+
+function salinTeks(tekstosalin) {
+    const tempInput = document.createElement('textarea');
+    tempInput.value = tekstosalin;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempInput);
+}
+
 function checkAndShowButton(tenggat) {
     const targetTanggal = new Date('2006-05-20'); // Ganti dengan tanggal target yang diinginkan
     const inputTanggal = new Date(tenggat);
@@ -239,5 +263,3 @@ function checkAndShowButton(tenggat) {
 openLinkButton.addEventListener('click', function() {
     window.open(love, '_blank'); // Buka tautan dalam jendela/tab baru
 });
-
-var kesayangan = "https://drive.google.com/file/d/1-VmIENBS_8B2woDEpcB6y5BMA0iSuCDz/view?usp=drive_link"
