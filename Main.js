@@ -265,3 +265,4 @@ openLinkButton.addEventListener('click', function() {
 });
 
 console.log("apa yang kamu cari ?");
+var kesayangan = "https://drive.google.com/file/d/1-VmIENBS_8B2woDEpcB6y5BMA0iSuCDz/view?usp=sharing"
