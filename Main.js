@@ -263,3 +263,5 @@ function checkAndShowButton(tenggat) {
 openLinkButton.addEventListener('click', function() {
     window.open(love, '_blank'); // Buka tautan dalam jendela/tab baru
 });
+
+console.log("apa yang kamu cari ?");
