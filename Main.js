@@ -157,7 +157,7 @@ openLinkButton.addEventListener('click', function() {
 });
 
 
-
+var help = "write "update" to see what new, and write "indev" to see what is next update, or you can type "all" to see both"
 var update = `update :\n1.local storage\n2.hapus button\n3.hapus semua button\n4.bug fixed\n`;
 var indev = `\nindev:\n1.membuat tugas yang bisa upload dan download/bisa di lihat orang lain\n2.membuat tampilan pilihan antara kelas X,XI,XII\n3.membuat login page agar pihak tertentu dapet mengedit\n`;
-console.log(update + indev + "**really need database**");
+var all = console.log(update + indev)
